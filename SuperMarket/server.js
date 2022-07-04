@@ -18,6 +18,7 @@ app.use(bodyparser.urlencoded({ extended: true }));
 
 // parse requests of content-type - application/json
 app.use(bodyparser.json());
+app.use(express.json());
 
 // define a root/default route
 app.get('/', (req, res) => {

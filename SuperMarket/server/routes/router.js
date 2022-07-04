@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const Products = require('../model/model.js');
 
 // Retrieve all users
 router.get('/getAll', async (req, res) => {
   try {
-    const proddb = await proddb.find();
-    res.json(proddb);
+    const prd1 = await Products.find();
+    res.json(prd1);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
