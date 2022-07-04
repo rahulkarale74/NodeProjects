@@ -11,6 +11,22 @@ router.get('/getAll', async (req, res) => {
   }
 });
 
+//Post Method
+router.post('/post', async (req, res) => {
+  const proddb = new proddb({
+    Id = req.body.Id,
+    Name: req.body.Name,
+    Cost: req.body.Cost,
+    Description: req.body.Description,
+  });
+
+  try {
+    const crtprod = await proddb.save();
+    res.status(200).json(crtprod);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
 // Create a new user
 //router.post('/', prodController.create);
 
