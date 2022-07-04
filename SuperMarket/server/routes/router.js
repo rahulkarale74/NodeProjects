@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Products = require('../model/model.js');
 
-// Retrieve all users
-router.get('/getAll', async (req, res) => {
+// Retrieve all Products
+router.get('/getproducts', async (req, res) => {
   try {
     const prd1 = await Products.find();
     res.json(prd1);
@@ -12,8 +12,8 @@ router.get('/getAll', async (req, res) => {
   }
 });
 
-//Post Method
-router.get('/post', async (req, res) => {
+//Create Products
+router.get('/createproducts', async (req, res) => {
   const prd2 = new Products({
     Id: req.body.Id,
     Name: req.body.Name,
