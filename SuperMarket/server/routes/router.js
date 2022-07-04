@@ -1,12 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const prodController = require('../controller/controller');
 
 // Retrieve all users
-router.get('/', prodController.findAll);
+router.get('/getAll', async (req, res) => {
+  try {
+    const proddb = await proddb.find();
+    res.json(proddb);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
 
 // Create a new user
-router.post('/', prodController.create);
+//router.post('/', prodController.create);
 
 // Retrieve a single user with id
 //router.get('/:id', userController.findOne);
