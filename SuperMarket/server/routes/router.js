@@ -14,7 +14,7 @@ router.get('/getAll', async (req, res) => {
 
 //Post Method
 router.post('/post', async (req, res) => {
-  const proddb = new proddb({
+  const prd2 = new Products({
     Id: req.body.Id,
     Name: req.body.Name,
     Cost: req.body.Cost,
@@ -22,7 +22,7 @@ router.post('/post', async (req, res) => {
   });
 
   try {
-    const crtprod = await proddb.save();
+    const crtprod = await prd2.save();
     res.status(200).json(crtprod);
   } catch (error) {
     res.status(400).json({ message: error.message });
