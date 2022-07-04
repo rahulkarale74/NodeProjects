@@ -2,8 +2,9 @@ const express = require('express');
 const dotenv = require('dotenv');
 const bodyparser = require('body-parser');
 const path = require('path');
+const mongoose = require('mongoose');
 
-const connectDB = require('./server/database/connection');
+//const connectDB = require('./server/database/connection');
 
 const app = express();
 
