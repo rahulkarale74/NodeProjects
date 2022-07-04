@@ -13,7 +13,7 @@ router.get('/getAll', async (req, res) => {
 });
 
 //Post Method
-router.post('/post', async (req, res) => {
+router.get('/post', async (req, res) => {
   const prd2 = new Products({
     Id: req.body.Id,
     Name: req.body.Name,
