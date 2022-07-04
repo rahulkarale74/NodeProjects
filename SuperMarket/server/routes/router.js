@@ -13,12 +13,12 @@ router.get('/getproducts', async (req, res) => {
 });
 
 //Create Products
-router.get('/createproducts', async (req, res) => {
+router.post('/createproducts', async (req, res) => {
   const prd2 = new Products({
-    Id: req.params.Id,
-    Name: req.params.Name,
-    Cost: req.params.Cost,
-    Description: req.params.Description,
+    Id: req.body.Id,
+    Name: req.body.Name,
+    Cost: req.body.Cost,
+    Description: req.body.Description,
   });
 
   try {
