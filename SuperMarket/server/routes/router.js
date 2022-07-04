@@ -14,7 +14,7 @@ router.get('/getAll', async (req, res) => {
 //Post Method
 router.post('/post', async (req, res) => {
   const proddb = new proddb({
-    Id = req.body.Id,
+    Id: req.body.Id,
     Name: req.body.Name,
     Cost: req.body.Cost,
     Description: req.body.Description,
