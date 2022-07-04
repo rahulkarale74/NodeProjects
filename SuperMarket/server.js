@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const bodyparser = require('body-parser');
 const path = require('path');
+const morgan = require('morgan');
 
 const connectDB = require('./server/database/connection');
 
@@ -9,6 +10,9 @@ const app = express();
 
 dotenv.config({ path: 'config.env' });
 const PORT = process.env.PORT || 8080;
+
+// log requests
+app.use(morgan('tiny'));
 
 // mongodb connection
 connectDB();
@@ -27,7 +31,7 @@ app.get('/', (req, res) => {
 // load routers
 const prodroutes = require('./server/routes/router');
 // using as middleware
-app.use('/api/smprod', prodroutes);
+app.use('/api', prodroutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
