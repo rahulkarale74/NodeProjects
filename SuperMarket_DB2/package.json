@@ -1,0 +1,22 @@
+{
+  "name": "rahulk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "idb-connector": "^1.2.16",
+    "idb-pconnector": "^1.1.0",
+    "morgan": "^1.10.0",
+    "mssql": "^8.1.2",
+    "mysql": "^2.18.1",
+    "odbc": "^2.4.4"
+  }
+}
